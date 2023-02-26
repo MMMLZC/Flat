@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "jf";
+    src: url("../fonts/jf.ttf");
+}
+  /* * */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "jf";
+    scroll-behavior: smooth;
+    background-color: #FFC129;
+  }
+  :root {
+    --black: #333;
+    --black2: #333;
+    --white: #fff;
+    --white2: #fff;
+  }
+  
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+  }
+/* .container{
+    position:relative;
+    display: flex;
+} */
+
+.main{
+    display: inline-flex;
+    justify-content: center;
+    padding: 10px;
+}
+.copyright{
+
+    bottom:0px;
+    text-align: center;
+}
+.copyright p{
+    position: absolute;
+    bottom: 10px;
+    font-size: 8px;
+}
+
+/* .copyright p{
+    align-items: center;
+} */
