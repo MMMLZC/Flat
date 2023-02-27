@@ -171,5 +171,5 @@ function countdown() {
   }, 1000);
 }
 function nextPage2() {
-  window.location.href = window.location.href + "/../page3.html";
+  window.location.href = "https://mmmlzc.github.io/pages/page3.html";
 }
