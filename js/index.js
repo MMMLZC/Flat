@@ -156,7 +156,7 @@ function showBtn() {
   console.log("video end");
 }
 function nextPage() {
-  window.location.href = "/page2.html";
+  window.location.href = "Flat/page2.html";
 }
 function countdown() {
   var timer = document.querySelector("#timer");
@@ -171,5 +171,5 @@ function countdown() {
   }, 1000);
 }
 function nextPage2() {
-  window.location.href = "/page3.html";
+  window.location.href = "Flat/page3.html";
 }
