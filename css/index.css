@@ -29,8 +29,8 @@
 } */
 
 .main{
-    display: inline-flex;
-    justify-content: center;
+    /* display: inline-flex;
+    justify-content: center; */
     padding: 10px;
 }
 .copyright{
@@ -44,6 +44,27 @@
     font-size: 8px;
 }
 
-/* .copyright p{
-    align-items: center;
-} */
+figure{
+  margin: 0 0 1rem;
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 0%);
+}
+
+#gif{
+  width: 200px;
+}
+
+#playBtn{
+  margin: 2px solid red;
+  position: relative;
+  left: 50%;
+  top: 300px;
+  bottom: 0px;
+  transform: translate(-50%, 0%);
+}
+
+.videoClass{
+  text-align:center;
+}

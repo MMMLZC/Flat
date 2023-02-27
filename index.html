@@ -23,26 +23,23 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    
   </head>
   <body>
-    <div>
       <div class="main">
         <!-- 放屁電梯 -->
-        <div>
-          <button onclick="getMedia()" type="button" class="btn btn-dark">
-            取得麥克風權限
-          </button>
-          <figure>
-            <!-- <img src="https://imgur.dcard.tw/QJmJPd9.gif" /> -->
-            <img id="gif" src="./images/cp.webp" alt="" />
-          </figure>
+        <div id="playBtn"  onclick="startVideo()" type="button" class="btn btn-dark">
+            開始
         </div>
+        <div class="videoClass" hidden>
+          <video id="myVideo" width="100%" height="200px" autoplay muted onended="showBtn()">
+            <source  src="IMG_7184.mp4" type="video/mp4">
+          </video>
+          <div id="startBtn" hidden onclick="nextPage()" type="button" class="btn btn-dark">
+            準備好了
+          </div>
       </div>
-      <!-- copyright text -->
-      <div class="copyright">
-        <p>Copyright © 2023 放屁電梯. All Right Reserved.</p>
-      </div>
-    </div>
   </body>
 </html>
+
 <script src="./js/index.js"></script>

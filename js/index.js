@@ -1,6 +1,12 @@
 // get dom
 let gif = document.getElementById("gif");
-gif.style.top = "500px;";
+let figure = document.getElementById("myFigure");
+// get start dom
+let startBtn = document.getElementById("startBtn");
+// video class dom
+let videoClass = document.getElementsByClassName("videoClass");
+let vid = document.getElementById("myVideo");
+let playBtn = document.getElementById("playBtn");
 
 function getMedia() {
   console.log("click getMedia()");
@@ -29,6 +35,7 @@ function show_some_data(given_typed_array, num_row_to_display, label) {
   } else if (label === "frequency") {
     for (; index < num_row_to_display && index < size_buffer; index += 1) {
       if (given_typed_array[index] > 100) {
+        frequencyTrans2Percent(given_typed_array[index]);
         console.log(given_typed_array[index]);
       }
     }
@@ -99,9 +106,8 @@ function start_microphone(stream) {
 
   var buffer_length = analyser_node.frequencyBinCount;
 
-  var array_freq_domain = new Uint8Array(buffer_length);
+  var array_freq_domain = new Uint8Array(buffer_length); // dataArray
   var array_time_domain = new Uint8Array(buffer_length);
-
   console.log("buffer_length " + buffer_length);
 
   script_processor_analysis_node.onaudioprocess = function () {
@@ -118,19 +124,52 @@ function start_microphone(stream) {
 }
 
 // control DOM
+// let lastFrequency = 0;
+function controlGIFSize(frequency) {
+  // lastFrequency = parseInt(frequency) + lastFrequency;
+  let controlSize = frequency.toString() + "%";
+  console.log("controlSize :" + controlSize);
+  figure.style.transform = `translate(-50%, -${controlSize})`;
+  // gif.style.width = "100px";
+}
 
-// function startAnalysis() {
-//   const AudioContext = window.AudioContext || window.webkitAudioContext;
-//   let audioContext = new AudioContext();
-//   const oscillator = audioContext.createOscillator();
-//   const gainNode = audioContext.createGain();
+// data transport
+function frequencyTrans2Percent(frequency) {
+  console.log("new frequency : " + frequency);
+  let percent = frequency.toString().slice(-2);
+  console.log("percentage : " + percent);
+  if (percent < 0) {
+    // 沒事
+  } else {
+    controlGIFSize(percent * 2.5);
+  }
+}
+function startVideo() {
+  videoClass[0].removeAttribute("hidden");
+  playBtn.setAttribute("hidden", "");
+  vid.play();
+}
 
-//   oscillator.type = "sine"; // 正弦波
-//   oscillator.frequency.value = 140; // A4 頻率
-//   oscillator.detune.value = 0; // 解諧
-//   gainNode.gain.value = 1; // 音量
-
-//   oscillator.connect(gainNode);
-//   oscillator.start(); // 啟動音源
-//   gainNode.connect(audioContext.destination);
-// }
+function showBtn() {
+  console.log(startBtn);
+  startBtn.removeAttribute("hidden");
+  console.log("video end");
+}
+function nextPage() {
+  window.location.href = "../page2.html";
+}
+function countdown() {
+  var timer = document.querySelector("#timer");
+  var number = 3;
+  setInterval(function () {
+    number--;
+    if (number < 0) number = 0;
+    setTimeout(() => {
+      nextPage2();
+    }, 1000);
+    timer.innerText = number + 0;
+  }, 1000);
+}
+function nextPage2() {
+  window.location.href = "../page3.html";
+}
