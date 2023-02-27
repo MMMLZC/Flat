@@ -171,5 +171,5 @@ function countdown() {
   }, 1000);
 }
 function nextPage2() {
-  window.location.href = "pages/page3.html";
+  window.location.href = "/../page3.html";
 }
